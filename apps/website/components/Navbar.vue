@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { LogIn } from 'lucide-vue-next'
-
 const isVisible = ref(false)
 
 onMounted(() => {

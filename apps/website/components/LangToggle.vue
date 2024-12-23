@@ -10,7 +10,6 @@ const currentLang = ref('zh')
 
 function switchLanguage(lang: string) {
   currentLang.value = lang
-  // 这里可以添加语言切换的逻辑
 }
 </script>
 
@@ -19,7 +18,7 @@ function switchLanguage(lang: string) {
     <DropdownMenuTrigger as-child>
       <Button variant="ghost" size="icon">
         <Languages class="h-5 w-5" />
-        <span class="sr-only">切换语言</span>
+        <span class="sr-only">Switch Language</span>
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">

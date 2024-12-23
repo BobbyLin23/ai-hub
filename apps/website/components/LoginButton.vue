@@ -38,21 +38,21 @@ async function sendVerificationCode() {
 
   isSending.value = true
   try {
-    // TODO: 调用发送验证码API
+    // TODO
     await new Promise(resolve => setTimeout(resolve, 1000))
     startCountdown()
   }
   catch (error) {
-    console.error('发送验证码失败:', error)
+    console.error('Send verification code failed:', error)
   }
 }
 
 async function loginWithGoogle() {
-  // TODO: 实现Google登录
+  // TODO: Google OAuth
 }
 
 async function loginWithGithub() {
-  // TODO: 实现Github登录
+  // TODO: Github OAuth
 }
 
 async function handleLogin() {
@@ -63,7 +63,7 @@ async function handleLogin() {
     // TODO: 实现邮箱验证码登录
   }
   catch (error) {
-    console.error('登录失败:', error)
+    console.error('Login failed:', error)
   }
 }
 </script>
@@ -89,8 +89,7 @@ async function handleLogin() {
           Continue with Google
         </Button>
         <Button variant="outline" class="gap-2" @click="loginWithGithub">
-          <Icon name="devicon:github" class="size-5 block dark:hidden" />
-          <Icon name="mdi:github" class="size-5 hidden hidden dark:block" />
+          <Icon name="mdi:github" class="size-6" />
           Continue with Github
         </Button>
         <div class="relative">

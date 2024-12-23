@@ -8,12 +8,11 @@ const features = [
   { number: '1000+', label: 'Reviews' },
   { number: '100+', label: 'Tutorials' },
 ]
-// 打字机效果
+
 const typedTitle = ref('')
 const typedDescription = ref('')
 
 onMounted(() => {
-  // 标题打字效果
   const titleChars = title.value.split('')
   let titleIndex = 0
   const titleInterval = setInterval(() => {
@@ -23,7 +22,6 @@ onMounted(() => {
     }
     else {
       clearInterval(titleInterval)
-      // 描述打字效果
       const descChars = description.value.split('')
       let descIndex = 0
       const descInterval = setInterval(() => {
@@ -42,12 +40,10 @@ onMounted(() => {
 
 <template>
   <section class="relative overflow-hidden mb-16">
-    <!-- 背景动画 -->
     <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 animate-gradient" />
 
     <div class="container relative py-24 sm:py-32">
       <div class="flex flex-col items-center text-center space-y-8">
-        <!-- 标题 -->
         <h1
           class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter bg-gradient-to-r from-primary to-primary-foreground bg-clip-text text-transparent"
         >
@@ -55,14 +51,12 @@ onMounted(() => {
           <span class="animate-blink">|</span>
         </h1>
 
-        <!-- 描述 -->
         <p
           class="mt-4 text-muted-foreground max-w-[700px] text-lg sm:text-xl leading-relaxed"
         >
           {{ typedDescription }}
         </p>
 
-        <!-- 按钮 -->
         <div class="flex gap-4 mt-8">
           <Button size="lg" class="animate-bounce-slow">
             Explore Tools
@@ -72,7 +66,6 @@ onMounted(() => {
           </Button>
         </div>
 
-        <!-- 统计数据 -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
           <div
             v-for="feature in features"

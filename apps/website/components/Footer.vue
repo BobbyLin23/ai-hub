@@ -7,10 +7,10 @@
         </p>
         <div class="flex items-center space-x-4">
           <a href="#" class="text-sm text-muted-foreground hover:text-primary">
-            关于我们
+            About
           </a>
           <a href="#" class="text-sm text-muted-foreground hover:text-primary">
-            联系方式
+            Contact
           </a>
         </div>
       </div>

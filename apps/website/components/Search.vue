@@ -10,20 +10,20 @@ const placeholder = computed(() => {
     : 'Describe your needs, AI will recommend tools for you...'
 })
 
-// function toggleSearchMode() {
-//   searchMode.value = searchMode.value === 'keyword' ? 'ai' : 'keyword'
-//   searchText.value = ''
-// }
+function toggleSearchMode() {
+  searchMode.value = searchMode.value === 'keyword' ? 'ai' : 'keyword'
+  searchText.value = ''
+}
 
 async function handleSearch() {
   if (!searchText.value.trim())
     return
 
   if (searchMode.value === 'keyword') {
-    // TODO: 实现关键词搜索
+    // TODO
   }
   else {
-    // TODO: 实现 AI 推荐搜索
+    // TODO
   }
 }
 </script>
@@ -32,12 +32,11 @@ async function handleSearch() {
   <div class="container mb-12">
     <div class="flex justify-center">
       <div class="w-full max-w-3xl space-y-4">
-        <!-- 搜索模式切换 -->
         <div class="flex justify-center gap-2">
           <Button
             :variant="searchMode === 'keyword' ? 'default' : 'outline'"
             size="sm"
-            @click="() => searchMode = 'keyword'"
+            @click="toggleSearchMode"
           >
             <Icon name="mdi:magnify" class="size-4" />
             Keyword Search
@@ -45,14 +44,13 @@ async function handleSearch() {
           <Button
             :variant="searchMode === 'ai' ? 'default' : 'outline'"
             size="sm"
-            @click="() => searchMode = 'ai'"
+            @click="toggleSearchMode"
           >
             <Sparkles class="size-4" />
             AI Recommend
           </Button>
         </div>
 
-        <!-- 搜索框 -->
         <div class="relative">
           <Input
             v-model="searchText"
@@ -73,7 +71,6 @@ async function handleSearch() {
           </Button>
         </div>
 
-        <!-- 搜索提示 -->
         <p class="text-center text-sm text-muted-foreground">
           {{ searchMode === 'keyword'
             ? 'Search by tool name, category, or keywords'
